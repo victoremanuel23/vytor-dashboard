@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VYTOR</title>
+
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Chart.js + Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1><i class="fas fa-chart-line"></i> VYTOR PLATAFORMA</h1>
+      <button id="toggleTema">🌗</button>
+    </header>
+
+    <section class="form-section">
+      <h2>Registrar Venda</h2>
+      <form id="formVenda">
+        <input type="text" id="produto" placeholder="Nome do Produto" required />
+        <input type="number" id="quantidade" placeholder="Quantidade" min="1" required />
+        <input type="number" step="0.01" id="preco" placeholder="Preço unitário (R$)" min="0.01" required />
+        <button type="submit">Adicionar Venda</button>
+      </form>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total Vendas</h3>
+        <p id="totalVendas">0</p>
+      </div>
+      <div class="card">
+        <h3>Receita Total (R$)</h3>
+        <p id="receitaTotal">R$ 0,00</p>
+      </div>
+      <div class="card">
+        <h3>Produtos Vendidos</h3>
+        <p id="produtosVendidos">0</p>
+      </div>
+    </section>
+
+    <section class="graficos">
+      <canvas id="graficoVendas" height="300"></canvas>
+    </section>
+
+    <section class="acoes">
+      <button id="exportarPdf">Exportar Relatório PDF</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
